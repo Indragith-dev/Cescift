@@ -39,17 +39,12 @@ const PageWrapper = styled.div`
 
 const PageContentWrapper = styled.div`
   width: 100%;
-  overflow: auto;
+  height: 100%;
+  overflow: overlay;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+
   &::-webkit-scrollbar {
-    width: 3px;
-  }
-  &::-webkit-scrollbar-track {
-    background: #ebe8e8;
-    border-radius: 10px;
-  }
-  &::-webkit-scrollbar-thumb {
-    width: 9px;
-    background: #d2d3d9;
-    border-radius: 10px;
+    display: none; /* Chrome, Safari, Opera */
   }
 `;

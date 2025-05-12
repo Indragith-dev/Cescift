@@ -7,10 +7,6 @@ import FeatureImage from '../../Assests/images/homeImages/featuredImage.png';
 const HomePage = () => {
   return (
     <HomeContainer>
-      {/* Banner */}
-      {/* <Banner>
-        <BannerImg src={"../../Assests/images/homeImages/bannerimage.png"} alt="Company Banner" />
-      </Banner> */}
 
       {/* Hero Section */}
       <HeroSection>
@@ -523,17 +519,6 @@ const CTAButton = styled(Link)`
     background-color: #0b78e5;
     transform: translateY(-2px);
   }
-`;
-
-const Banner = styled.div`
-  width: 100%;
-  height: auto;
-`;
-
-const BannerImg = styled.img`
-  width: 100%;
-  height: auto;
-  object-fit: cover;
 `;
 
 const MapSection = styled.section`
