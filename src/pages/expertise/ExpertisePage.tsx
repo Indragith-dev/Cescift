@@ -173,7 +173,7 @@ const ExpertisePage = () => {
         </IndustriesGrid>
       </SectionWrapper>
 
-      <SectionWrapper bgColor="#f5f7fa">
+      <SectionWrapper bgColor="#0a1e2f">
         <SectionTitle>Our Approach</SectionTitle>
         <ApproachContent>
           <ApproachPhases>
@@ -574,12 +574,12 @@ const PhaseDescription = styled.p`
 `;
 
 const CallToAction = styled.section`
-  background-color: #0a1e2f;
+  background-color: #f5f7fa ;
   background-image: url('/src/assets/images/cta-bg.jpg');
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;
-  color: white;
+  color: #0a1e2f;
   padding: 80px 5%;
   text-align: center;
   position: relative;
@@ -591,7 +591,7 @@ const CallToAction = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(10, 30, 47, 0.8);
+    background-color: white;
   }
   
   @media (max-width: 768px) {

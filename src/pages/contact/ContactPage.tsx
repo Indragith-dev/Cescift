@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import TextField from '../../components/TextFieldComponent';
 import Button from '../../components/CustomButtonComponent';
+import TextField from '../../components/TextFieldComponent';
 
 interface FormData {
   name: string;
@@ -41,7 +41,9 @@ const ContactPage = () => {
       newErrors.email = 'Invalid email address';
     }
 
-    if (formData.phone.trim() && !/^\+?\d{10,15}$/.test(formData.phone)) {
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+    } else if(formData.phone.trim() && !/^\+?\d{10,15}$/.test(formData.phone)) {
       newErrors.phone = 'Invalid phone number';
     }
 
@@ -54,6 +56,7 @@ const ContactPage = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    console.log('Form Submitted', formData);
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: undefined });
   };
@@ -73,7 +76,7 @@ const ContactPage = () => {
     <ContactContainer>
       <HeroSection>
         <HeroTitle>Contact Us</HeroTitle>
-        <HeroSubtitle>We’d love to hear from you. Get in touch with us below.</HeroSubtitle>
+        <HeroSubtitle>We'd love to hear from you. Get in touch with us below.</HeroSubtitle>
       </HeroSection>
 
       <FormWrapper>
@@ -99,18 +102,21 @@ const ContactPage = () => {
             onChange={handleChange}
             errorMessage={errors.phone}
           />
-          <TextArea
+          <TextField
             name="message"
             placeholder="Your Message"
             value={formData.message}
             onChange={handleChange}
+            errorMessage={errors.message}
+            isMessageField
+            className='text'
           />
-          {errors.message && <ErrorText>{errors.message}</ErrorText>}
 
           <Button 
-          type="submit" 
-          style={{ minHeight: '40px'}}
-          children={<label>Send Message</label>} />
+            type="submit" 
+            style={{ minHeight: '40px'}}
+            children={<label>Send Message</label>} 
+          />
 
           {submitSuccess && <SuccessText>Thank you! Your message has been sent.</SuccessText>}
         </Form>
@@ -120,6 +126,7 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+
 const ContactContainer = styled.div`
   padding-top: 80px;
 `;
@@ -176,20 +183,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 25px;
-`;
-
-const TextArea = styled.textarea`
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  min-height: 150px;
-  resize: vertical;
-`;
-
-const ErrorText = styled.p`
-  color: red;
-  font-size: 0.9rem;
+  position: relative;
 `;
 
 const SuccessText = styled.p`

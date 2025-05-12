@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import logo from '../../Assests/icons/logo.png';
 
 const AboutPage = () => {
   return (
@@ -12,7 +13,7 @@ const AboutPage = () => {
       <SectionWrapper>
         <SectionTitle>Who We Are</SectionTitle>
         <AboutContent>
-          <AboutImage src="/src/assets/images/about-company.jpg" alt="CESCIFT Company" />
+          <AboutImage src={logo} alt="CESCIFT Company" />
           <AboutText>
             <p>
               CESCIFT is a premier Instrumentation and Control System Integrator delivering
