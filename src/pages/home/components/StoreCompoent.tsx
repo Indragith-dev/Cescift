@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import Store from "../../../Assests/icons/storeIcon.png";
+import Store from "../../../Assests/icons/Cart.svg";
 
 
 
@@ -20,7 +20,7 @@ const StoreComponent = () => (
       </StoreButton>
     </StoreContent>
     <StoreGraphic>
-      <PulsingCircle color="#1e90ff" size="250px" delay="0s" />
+      <PulsingCircle color="#1e90ff" size="300px" delay="0s" />
       <PulsingCircle color="#0a1e2f" size="200px" delay="0.5s" />
       <PulsingCircle color="#64b5f6" size="140px" delay="1s" />
       <CenteredStoreButton href="https://mybillbook.in/store/cescift" target="_blank" rel="noopener noreferrer">
@@ -184,8 +184,7 @@ interface PulsingCircleProps {
   `;
   
   const StoreIcon = styled.img`
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     object-fit: contain;
-    color: white;
   `;

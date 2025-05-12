@@ -1,28 +1,34 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import NavBar from '../navbar/NavBar';
+import Footer from './footer';
 
-interface Props {
-    
-}
+const Layout = () => {
+  const location = useLocation();
+  
+  // Add effect to scroll to top when location changes
+  useEffect(() => {
+    document.documentElement.scrollTo({ top: 0, behavior: 'auto' });
+    document.body.scrollTo({ top: 0, behavior: 'auto' });
+  }, [location.pathname]);
 
-const Layout = (props: Props) => {
-    return (
-        <>
-          <HeaderWrapper>
-            <NavBar />
-          </HeaderWrapper>
-          <PageWrapper className="common-page-wrapper">
-            <PageContentWrapper>
-              <Outlet />
-            </PageContentWrapper>
-          </PageWrapper>
-        </>
-    )
-}
+  return (
+    <>
+      <HeaderWrapper>
+        <NavBar />
+      </HeaderWrapper>
+      <PageWrapper>
+        <PageContentWrapper>
+          <Outlet />
+        </PageContentWrapper>
+        <Footer />
+      </PageWrapper>
+    </>
+  );
+};
 
-export default Layout
+export default Layout;
 
 const HeaderWrapper = styled.div`
   @media (max-width: 768px) {
@@ -33,18 +39,20 @@ const HeaderWrapper = styled.div`
 
 const PageWrapper = styled.div`
   display: flex;
-  height: 100vh;
-  width: 100%;
+  flex-direction: column;
+  min-height: 100vh;
 `;
 
-const PageContentWrapper = styled.div`
+const PageContentWrapper = styled.main`
+  flex: 1;
   width: 100%;
-  height: 100%;
-  overflow: overlay;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 
   &::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none;
   }
 `;

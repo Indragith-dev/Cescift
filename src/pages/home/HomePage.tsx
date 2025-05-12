@@ -5,6 +5,9 @@ import Adnoc from '../../Assests/images/clients/hindustanUL.png';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import StoreComponent from './components/StoreCompoent';
+import Mission from '../../Assests/images/homeImages/mission.png';
+import Vission from '../../Assests/images/homeImages/vission.png';
+import ExpertiseSection from './components/ExpertiseComponent';
 
 const HomePage = () => {
   // For client logo animation
@@ -162,7 +165,7 @@ const HomePage = () => {
               whileHover={{ y: -10, boxShadow: '0 20px 30px rgba(0, 0, 0, 0.1)' }}
             >
               <CardIconWrapper>
-                <CardIcon src="/src/assets/images/icon-mission.png" alt="Mission" />
+                <CardIcon src={Mission} alt="Mission" />
               </CardIconWrapper>
               <CardTitle>Mission</CardTitle>
               <CardText>
@@ -177,7 +180,7 @@ const HomePage = () => {
               whileHover={{ y: -10, boxShadow: '0 20px 30px rgba(0, 0, 0, 0.1)' }}
             >
               <CardIconWrapper>
-                <CardIcon src="/src/assets/images/icon-vision.png" alt="Vision" />
+                <CardIcon src={Vission} alt="Vision" />
               </CardIconWrapper>
               <CardTitle>Vision</CardTitle>
               <CardText>
@@ -200,60 +203,49 @@ const HomePage = () => {
       </SectionWrapper>
 
       {/* Expertise Section */}
-      <SectionWrapper 
+      <ExpertiseSection isVisible={isVisible.expertise} sectionRef={expertiseRef} />
+
+      {/* Store Section */}
+        <StoreComponent />
+
+       {/* Industries Section */}
+       <SectionWrapper 
         bgColor="#f8fafd" 
-        id="expertise" 
-        ref={expertiseRef}
+        id="industries" 
+        ref={industriesRef}
       >
         <SectionTitle
           as={motion.h2}
           initial={{ opacity: 0, y: 30 }}
-          animate={isVisible.expertise ? { opacity: 1, y: 0 } : {}}
+          animate={isVisible.industries ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          Our <GradientText>Expertise</GradientText>
+          Industries We <GradientText>Serve</GradientText>
         </SectionTitle>
-        <ExpertiseGrid>
+        <IndustriesGrid>
           {[
-            {
-              icon: "/src/assets/images/icon-automation.png",
-              title: "Industrial Automation Solutions",
-              description: "Providing turnkey integrated automation solutions from the shop floor to Manufacturing Information Systems.",
-              link: "/services/#automation",
-              delay: 0.3
-            },
-            {
-              icon: "/src/assets/images/icon-panel.png",
-              title: "Electrical & Control Panel Manufacturing",
-              description: "Custom design and fabrication of electrical and control panels for seamless integration.",
-              link: "/services/#panel",
-              delay: 0.5
-            },
-            {
-              icon: "/src/assets/images/icon-embedded.png",
-              title: "Embedded System Engineering",
-              description: "Developing custom hardware and firmware solutions optimized for enhanced performance.",
-              link: "/services/#embedded",
-              delay: 0.7
-            }
-          ].map((item, index) => (
-            <ExpertiseCard
+            { name: "Oil & Gas", icon: "/src/assets/images/industry-oil.png", delay: 0.2 },
+            { name: "Water & Wastewater", icon: "/src/assets/images/industry-water.png", delay: 0.3 },
+            { name: "Food & Beverage", icon: "/src/assets/images/industry-food.png", delay: 0.4 },
+            { name: "Pharmaceuticals", icon: "/src/assets/images/industry-pharma.png", delay: 0.5 },
+            { name: "Power & Utilities", icon: "/src/assets/images/industry-power.png", delay: 0.6 },
+            { name: "Steel & Aluminum", icon: "/src/assets/images/industry-metal.png", delay: 0.7 }
+          ].map((industry, index) => (
+            <IndustryItem
               key={index}
               as={motion.div}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isVisible.expertise ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: item.delay, ease: "easeOut" }}
-              whileHover={{ y: -10, boxShadow: '0 20px 30px rgba(0, 0, 0, 0.1)' }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible.industries ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.1, delay: industry.delay, ease: "easeOut" }}
+              whileHover={{ y: -10, scale: 1.05 }}
             >
-              <CardIconGlowing>
-                <CardIcon src={item.icon} alt={item.title} />
-              </CardIconGlowing>
-              <ExpertiseTitle>{item.title}</ExpertiseTitle>
-              <ExpertiseText>{item.description}</ExpertiseText>
-              <CardLink to={item.link}>Learn More</CardLink>
-            </ExpertiseCard>
+              <IndustryIconContainer>
+                <IndustryIcon src={industry.icon} alt={industry.name} />
+              </IndustryIconContainer>
+              <IndustryName>{industry.name}</IndustryName>
+            </IndustryItem>
           ))}
-        </ExpertiseGrid>
+        </IndustriesGrid>
       </SectionWrapper>
 
       {/* Clients Section */}
@@ -300,51 +292,33 @@ const HomePage = () => {
         </ClientsContainer>
       </SectionWrapper>
 
-      {/* Industries Section */}
-      <SectionWrapper 
-        bgColor="#f8fafd" 
-        id="industries" 
-        ref={industriesRef}
-      >
-        <SectionTitle
-          as={motion.h2}
+      {/* Call To Action */}
+      <CallToAction>
+        <CTAContent
+          as={motion.div}
           initial={{ opacity: 0, y: 30 }}
-          animate={isVisible.industries ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.5 }}
         >
-          Industries We <GradientText>Serve</GradientText>
-        </SectionTitle>
-        <IndustriesGrid>
-          {[
-            { name: "Oil & Gas", icon: "/src/assets/images/industry-oil.png", delay: 0.2 },
-            { name: "Water & Wastewater", icon: "/src/assets/images/industry-water.png", delay: 0.3 },
-            { name: "Food & Beverage", icon: "/src/assets/images/industry-food.png", delay: 0.4 },
-            { name: "Pharmaceuticals", icon: "/src/assets/images/industry-pharma.png", delay: 0.5 },
-            { name: "Power & Utilities", icon: "/src/assets/images/industry-power.png", delay: 0.6 },
-            { name: "Steel & Aluminum", icon: "/src/assets/images/industry-metal.png", delay: 0.7 }
-          ].map((industry, index) => (
-            <IndustryItem
-              key={index}
-              as={motion.div}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isVisible.industries ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: industry.delay, ease: "easeOut" }}
-              whileHover={{ y: -10, scale: 1.05 }}
-            >
-              <IndustryIconContainer>
-                <IndustryIcon src={industry.icon} alt={industry.name} />
-              </IndustryIconContainer>
-              <IndustryName>{industry.name}</IndustryName>
-            </IndustryItem>
-          ))}
-        </IndustriesGrid>
-      </SectionWrapper>
+          <CTATitle>Ready to optimize your operations?</CTATitle>
+          <CTAText>
+            Let's discuss how our automation solutions can transform your business.
+          </CTAText>
+          <CTAButton 
+            to="/contact"
+            as={motion.a}
+            whileHover={{ scale: 1.05, boxShadow: '0 10px 20px rgba(30, 144, 255, 0.4)' }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Contact Our Experts
+          </CTAButton>
+        </CTAContent>
+        <CTABackground />
+      </CallToAction>
 
-      {/* Store Link Section */}
-      <StoreComponent />
-
-      {/* Location Map */}
-      <MapSection>
+       {/* Location Map */}
+       <MapSection>
         <MapTitle
           as={motion.h2}
           initial={{ opacity: 0, y: 20 }}
@@ -374,30 +348,6 @@ const HomePage = () => {
         </MapWrapper>
       </MapSection>
 
-      {/* Call To Action */}
-      <CallToAction>
-        <CTAContent
-          as={motion.div}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.5 }}
-        >
-          <CTATitle>Ready to optimize your operations?</CTATitle>
-          <CTAText>
-            Let's discuss how our automation solutions can transform your business.
-          </CTAText>
-          <CTAButton 
-            to="/contact"
-            as={motion.a}
-            whileHover={{ scale: 1.05, boxShadow: '0 10px 20px rgba(30, 144, 255, 0.4)' }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Contact Our Experts
-          </CTAButton>
-        </CTAContent>
-        <CTABackground />
-      </CallToAction>
     </HomeContainer>
   );
 };
@@ -742,9 +692,9 @@ const glowAnimation = keyframes`
 `;
 
 const CardIconWrapper = styled.div`
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #1e90ff, #64b5f6);
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #ffffff, #ffffff);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -754,10 +704,10 @@ const CardIconWrapper = styled.div`
 `;
 
 const CardIcon = styled.img`
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
+  width: 115px;
+  height: 115px;
+  object-fit: cover;
+  border-radius: 50%;
 `;
 
 const CardTitle = styled.h3`
@@ -786,97 +736,6 @@ const ExploreButton = styled(Link)`
   max-width: 250px;
   transition: all 0.3s ease;
   box-shadow: 0 10px 20px rgba(30, 144, 255, 0.2);
-`;
-
-// Expertise Section
-const ExpertiseGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  
-  @media (max-width: 992px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const ExpertiseCard = styled.div`
-  background-color: white;
-  border-radius: 16px;
-  padding: 40px 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-`;
-
-const CardIconGlowing = styled.div`
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #1e90ff, #64b5f6);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 25px;
-  position: relative;
-  
-  &:after {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border-radius: 50%;
-    background: transparent;
-    border: 2px solid rgba(30, 144, 255, 0.3);
-    animation: ${glowAnimation} 3s infinite ease-in-out;
-  }
-`;
-
-const ExpertiseTitle = styled.h3`
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  color: #0a1e2f;
-  text-align: center;
-  font-weight: 700;
-`;
-
-const ExpertiseText = styled.p`
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-  text-align: center;
-  flex-grow: 1;
-`;
-
-const CardLink = styled(Link)`
-  display: inline-block;
-  margin-top: 20px;
-  color: #1e90ff;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
-  position: relative;
-  width: 100%;
-  
-  &:after {
-    content: '→';
-    margin-left: 5px;
-    transition: transform 0.3s ease;
-  }
-  
-  &:hover:after {
-    transform: translateX(5px);
-  }
 `;
 
 // Clients Section
@@ -983,147 +842,13 @@ const IndustryName = styled.h4`
   font-weight: 600;
 `;
 
-// Store Section
-const StoreSection = styled.section`
-  padding: 80px 5%;
-  background-color: #0a1e2f;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  position: relative;
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
-    padding: 60px 5%;
-    text-align: center;
-  }
-`;
 
-const StoreContent = styled.div`
-  flex: 1;
-  max-width: 600px;
-  position: relative;
-  z-index: 2;
-  
-  @media (max-width: 768px) {
-    margin-bottom: 40px;
-  }
-`;
-
-const ShopNowBadge = styled.span`
-  display: inline-block;
-  background: linear-gradient(90deg, #1e90ff, #64b5f6);
-  color: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-`;
-
-const StoreTitle = styled.h2`
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  font-weight: 800;
-  
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-`;
-
-const StoreText = styled.p`
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-`;
-
-const StoreButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  padding: 14px 30px;
-  background: white;
-  color: #0a1e2f;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  
-  &:hover {
-    background: #f5f5f5;
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  }
-`;
-
-const StoreButtonText = styled.span`
-  margin-right: 10px;
-`;
-
-const StoreArrow = styled.span`
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-  
-  ${StoreButton}:hover & {
-    transform: translateX(5px);
-  }
-`;
-
-const pulseAnimation = keyframes`
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(30, 144, 255, 0.7);
-  }
-  
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 20px rgba(30, 144, 255, 0);
-  }
-  
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(30, 144, 255, 0);
-  }
-`;
-
-const StoreGraphic = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  min-height: 300px;
-`;
 
 interface PulsingCircleProps {
   size: string;
   color: string;
   delay: string;
 }
-
-const PulsingCircle = styled.div<PulsingCircleProps>`
-  position: absolute;
-  width: ${props => props.size || '100px'};
-  height: ${props => props.size || '100px'};
-  background-color: ${props => props.color || '#1e90ff'};
-  border-radius: 50%;
-  opacity: 0.2;
-  animation: ${pulseAnimation} 3s infinite;
-  animation-delay: ${props => props.delay || '0s'};
-`;
-
-const cubeRotate = keyframes`
-  0% {
-    transform: rotateY(0) rotateX(0);
-  }
-  100% {
-    transform: rotateY(360deg) rotateX(360deg);
-  }
-`;
 
 // Map Section
 const MapSection = styled.section`

@@ -12,6 +12,11 @@ const NavBar: React.FC<NavBarProps> = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
+  useEffect(() => {
+    document.documentElement.scrollTo({ top: 0, behavior: 'auto' });
+    document.body.scrollTo({ top: 0, behavior: 'auto' });
+  }, [location.pathname]);
+
   const menuItems = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Us' },
