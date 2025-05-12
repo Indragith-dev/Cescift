@@ -13,7 +13,7 @@ import ContactPage from './pages/contact/ContactPage';
 const App = () => {
   return (
     <HomeWrapper className="App">
-       <BrowserRouter basename="/Cescift">
+       <BrowserRouter basename="/">
        <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
