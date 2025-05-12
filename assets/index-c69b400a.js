@@ -1792,7 +1792,7 @@ To suppress this warning, you need to explicitly provide the \`palette.${t}Chann
   color: green;
   font-size: 1rem;
   margin-top: 10px;
-`,WM=()=>c.jsx(JM,{className:"App",children:c.jsx(pT,{children:c.jsx(qE,{children:c.jsxs(va,{element:c.jsx(L5,{}),children:[c.jsx(va,{path:"/",element:c.jsx(G5,{})}),c.jsx(va,{path:"/about",element:c.jsx(dA,{})}),c.jsx(va,{path:"/services",element:c.jsx(AA,{})}),c.jsx(va,{path:"/products",element:c.jsx(YA,{})}),c.jsx(va,{path:"/expertise",element:c.jsx(e3,{})}),c.jsx(va,{path:"/contact",element:c.jsx(qM,{})})]})})})}),JM=R.div`
+`,WM=()=>c.jsx(JM,{className:"App",children:c.jsx(pT,{basename:"/Cescift",children:c.jsx(qE,{children:c.jsxs(va,{element:c.jsx(L5,{}),children:[c.jsx(va,{path:"/",element:c.jsx(G5,{})}),c.jsx(va,{path:"/about",element:c.jsx(dA,{})}),c.jsx(va,{path:"/services",element:c.jsx(AA,{})}),c.jsx(va,{path:"/products",element:c.jsx(YA,{})}),c.jsx(va,{path:"/expertise",element:c.jsx(e3,{})}),c.jsx(va,{path:"/contact",element:c.jsx(qM,{})})]})})})}),JM=R.div`
 overflow: auto;
  &::-webkit-scrollbar {
     display: none;
