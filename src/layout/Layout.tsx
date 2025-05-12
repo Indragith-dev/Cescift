@@ -28,7 +28,6 @@ const HeaderWrapper = styled.div`
   @media (max-width: 768px) {
     background-size: cover;
     background-position: center;
-    height: 108px;
   }
 `;
 

@@ -107,7 +107,10 @@ const ContactPage = () => {
           />
           {errors.message && <ErrorText>{errors.message}</ErrorText>}
 
-          <Button type="submit" title="Send Message" />
+          <Button 
+          type="submit" 
+          title="Send Message"
+          style={{ minHeight: '40px'}} />
 
           {submitSuccess && <SuccessText>Thank you! Your message has been sent.</SuccessText>}
         </Form>
