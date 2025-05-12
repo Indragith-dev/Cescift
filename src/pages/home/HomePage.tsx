@@ -4,6 +4,7 @@ import FeatureImage from '../../Assests/images/homeImages/featuredImage.png';
 import Adnoc from '../../Assests/images/clients/hindustanUL.png';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
+import StoreComponent from './components/StoreCompoent';
 
 const HomePage = () => {
   // For client logo animation
@@ -340,28 +341,7 @@ const HomePage = () => {
       </SectionWrapper>
 
       {/* Store Link Section */}
-      <StoreSection>
-        <StoreContent>
-          <ShopNowBadge>SHOP NOW</ShopNowBadge>
-          <StoreTitle>Visit Our Online Store</StoreTitle>
-          <StoreText>
-            Browse our product catalog for industrial automation components, instrumentation, 
-            control systems, and more.
-          </StoreText>
-          <StoreButton href="https://mybillbook.in/store/cescift" target="_blank" rel="noopener noreferrer">
-            <StoreButtonText>Explore Store</StoreButtonText>
-            <StoreArrow>→</StoreArrow>
-          </StoreButton>
-        </StoreContent>
-        <StoreGraphic>
-          <PulsingCircle color="#1e90ff" size="200px" delay="0s" />
-          <PulsingCircle color="#0a1e2f" size="170px" delay="0.5s" />
-          <PulsingCircle color="#64b5f6" size="140px" delay="1s" />
-          {/* <StoreCubeImage /> */}
-
-          {/* <StoreCube />  */}
-        </StoreGraphic>
-      </StoreSection>
+      <StoreComponent />
 
       {/* Location Map */}
       <MapSection>
@@ -1145,42 +1125,6 @@ const cubeRotate = keyframes`
   }
 `;
 
-const StoreCubeImage = styled.div`
-  width: 120px;
-  height: 120px;
-  background-color: white;
-  border-radius: 20px;
-  position: relative;
-  z-index: 3;
-  transform-style: preserve-3d;
-  animation: ${cubeRotate} 20s linear infinite;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  
-  &:before, &:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-  }
-  
-  &:before {
-    background: linear-gradient(45deg, #1e90ff, #64b5f6);
-    transform: rotateY(90deg) translateZ(60px);
-  }
-  
-  &:after {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateZ(-60px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    color: #1e90ff;
-    font-weight: bold;
-  }
-`;
-
 // Map Section
 const MapSection = styled.section`
   padding: 80px 5%;
@@ -1281,86 +1225,3 @@ const CTAButton = styled(Link)`
   transition: all 0.3s ease;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 `;
-
-
-
-// // Cube Wrapper - Container for rotating effect
-// const CubeWrapper = styled.div`
-//   perspective: 1200px;
-//   width: 120px;
-//   height: 120px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;
-
-// // Cube Container
-// const Cube = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   position: relative;
-//   transform-style: preserve-3d;
-//   animation: ${cubeRotate} 20s linear infinite;
-// `;
-
-// // Each side of the Cube (Front, Back, etc.)
-// const CubeSide = styled.div`
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   font-size: 1rem;
-//   font-weight: bold;
-//   color: white;
-//   border-radius: 10px;
-//   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-// `;
-
-// // Different sides of the cube
-// const Front = styled(CubeSide)`
-//   transform: rotateY(0deg) translateZ(60px);
-//   background-color: #2c3e50; /* Dark Blue */
-// `;
-
-// const Back = styled(CubeSide)`
-//   transform: rotateY(180deg) translateZ(60px);
-//   background-color: #34495e; /* Muted Blue */
-// `;
-
-// const Left = styled(CubeSide)`
-//   transform: rotateY(-90deg) translateZ(60px);
-//   background-color: #95a5a6; /* Soft Gray */
-// `;
-
-// const Right = styled(CubeSide)`
-//   transform: rotateY(90deg) translateZ(60px);
-//   background-color: #7f8c8d; /* Slate Gray */
-// `;
-
-// const Top = styled(CubeSide)`
-//   transform: rotateX(90deg) translateZ(60px);
-//   background-color: #16a085; /* Teal */
-// `;
-
-// const Bottom = styled(CubeSide)`
-//   transform: rotateX(-90deg) translateZ(60px);
-//   background-color: #f39c12; /* Golden Yellow */
-// `;
-
-// // StoreCube Component
-// export const StoreCube = () => (
-//   <CubeWrapper>
-//     <Cube>
-//       <Front>Store</Front>
-//       <Back>Store</Back>
-//       <Left>Products</Left>
-//       <Right>Shop</Right>
-//       <Top>Welcome</Top>
-//       <Bottom>Sale</Bottom>
-//     </Cube>
-//   </CubeWrapper>
-// );
-
-
