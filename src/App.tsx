@@ -13,16 +13,16 @@ import ContactPage from './pages/contact/ContactPage';
 const App = () => {
   return (
     <HomeWrapper className="App">
-       <BrowserRouter>
+       <BrowserRouter basename="/Cescift">
        <Routes>
-       <Route element={<Layout />}>
-       <Route path="/" element={<HomePage />} />
-       <Route path="/about" element={<AboutPage />} />
-       <Route path="/services" element={<ServicesPage />} />
-       <Route path="/products" element={<ProductsPage />} />
-       <Route path="/expertise" element={<ExpertisePage />} />
-       <Route path="/contact" element={<ContactPage />} />
-       </Route>
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/expertise" element={<ExpertisePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Route>
        </Routes>
        </BrowserRouter>
     </HomeWrapper>
