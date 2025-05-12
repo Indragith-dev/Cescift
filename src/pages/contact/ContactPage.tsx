@@ -109,8 +109,8 @@ const ContactPage = () => {
 
           <Button 
           type="submit" 
-          title="Send Message"
-          style={{ minHeight: '40px'}} />
+          style={{ minHeight: '40px'}}
+          children={<label>Send Message</label>} />
 
           {submitSuccess && <SuccessText>Thank you! Your message has been sent.</SuccessText>}
         </Form>

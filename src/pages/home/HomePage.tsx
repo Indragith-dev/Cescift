@@ -8,9 +8,9 @@ const HomePage = () => {
   return (
     <HomeContainer>
       {/* Banner */}
-      <Banner>
+      {/* <Banner>
         <BannerImg src={"../../Assests/images/homeImages/bannerimage.png"} alt="Company Banner" />
-      </Banner>
+      </Banner> */}
 
       {/* Hero Section */}
       <HeroSection>
