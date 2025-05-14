@@ -61,15 +61,33 @@ const ContactPage = () => {
     setErrors({ ...errors, [e.target.name]: undefined });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
 
     if (validateForm()) {
-      // Simulate submit
-      console.log('Form Submitted', formData);
-      setSubmitSuccess(true);
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      try {
+        const response = await fetch('http://localhost:5000/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+    
+        if (response.ok) {
+          setSubmitSuccess(true);
+          setFormData({ name: '', email: '', phone: '', message: '' });
+        } else {
+          const data = await response.json();
+          console.error('Error sending email:', data.message);
+          setSubmitSuccess(false);
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        setSubmitSuccess(false);
+      }
     }
+    
   };
 
   return (
