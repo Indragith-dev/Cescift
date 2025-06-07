@@ -1,13 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import FeatureImage from '../../Assests/images/homeImages/featuredImage.png';
-import Adnoc from '../../Assests/images/clients/hindustanUL.png';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import StoreComponent from './components/StoreCompoent';
 import Mission from '../../Assests/images/homeImages/mission.png';
 import Vission from '../../Assests/images/homeImages/vission.png';
 import ExpertiseSection from './components/ExpertiseComponent';
+import OilImage from '../../Assests/images/homeImages/industriesImages/oilAndGasImage.jpg'
+import WaterImage from '../../Assests/images/homeImages/industriesImages/waterAndWaste.jpg'
+import FoodImage from '../../Assests/images/homeImages/industriesImages/food&BeverageImage.jpg'
+import PharmaImage from '../../Assests/images/homeImages/industriesImages/pharmaImage.jpg'
+import PowerImage from '../../Assests/images/homeImages/industriesImages/powerImage.jpg'
+import SteelImage from '../../Assests/images/homeImages/industriesImages/steelImage.jpg'
+import ClientSection from './components/ClientComponent';
 
 const HomePage = () => {
   // For client logo animation
@@ -28,27 +34,6 @@ const HomePage = () => {
   const expertiseRef = useRef<HTMLElement | null>(null);
   const clientsRef =useRef<HTMLElement | null>(null);
   const industriesRef = useRef<HTMLElement | null>(null);
-  
-  // Client logos from the folder structure
-  const clientLogos = [
-    { name: 'ADNOC', src: Adnoc },
-    { name: 'AEIS', src: Adnoc },
-    { name: 'Apollo', src: Adnoc },
-    { name: 'Dhathri', src: Adnoc },
-    { name: 'Fluitron', src: Adnoc },
-    { name: 'Hindustan', src: Adnoc },
-    { name: 'Hindustan UL', src: Adnoc },
-    { name: 'Indian Oil', src: Adnoc },
-    { name: 'Indian Railway', src: Adnoc }
-  ];
-
-  // Auto rotate clients
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveClient((prev) => (prev + 1) % clientLogos.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [clientLogos.length]);
 
   // Intersection observer for scroll animations
   useEffect(() => {
@@ -224,12 +209,12 @@ const HomePage = () => {
         </SectionTitle>
         <IndustriesGrid>
           {[
-            { name: "Oil & Gas", icon: "/src/assets/images/industry-oil.png", delay: 0.2 },
-            { name: "Water & Wastewater", icon: "/src/assets/images/industry-water.png", delay: 0.3 },
-            { name: "Food & Beverage", icon: "/src/assets/images/industry-food.png", delay: 0.4 },
-            { name: "Pharmaceuticals", icon: "/src/assets/images/industry-pharma.png", delay: 0.5 },
-            { name: "Power & Utilities", icon: "/src/assets/images/industry-power.png", delay: 0.6 },
-            { name: "Steel & Aluminum", icon: "/src/assets/images/industry-metal.png", delay: 0.7 }
+            { name: "Oil & Gas", icon: OilImage, delay: 0.2 },
+            { name: "Water & Wastewater", icon: WaterImage, delay: 0.3 },
+            { name: "Food & Beverage", icon: FoodImage, delay: 0.4 },
+            { name: "Pharmaceuticals", icon: PharmaImage, delay: 0.5 },
+            { name: "Power & Utilities", icon: PowerImage, delay: 0.6 },
+            { name: "Steel & Aluminum", icon: SteelImage, delay: 0.7 }
           ].map((industry, index) => (
             <IndustryItem
               key={index}
@@ -239,9 +224,7 @@ const HomePage = () => {
               transition={{ duration: 0.1, delay: industry.delay, ease: "easeOut" }}
               whileHover={{ y: -10, scale: 1.05 }}
             >
-              <IndustryIconContainer>
-                <IndustryIcon src={industry.icon} alt={industry.name} />
-              </IndustryIconContainer>
+              <IndustryIconContainer bgImage={industry.icon} />
               <IndustryName>{industry.name}</IndustryName>
             </IndustryItem>
           ))}
@@ -249,48 +232,7 @@ const HomePage = () => {
       </SectionWrapper>
 
       {/* Clients Section */}
-      <SectionWrapper id="clients" ref={clientsRef}>
-        <SectionTitle
-          as={motion.h2}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible.clients ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          Our Trusted <GradientText>Clients</GradientText>
-        </SectionTitle>
-        <ClientsContainer
-          as={motion.div}
-          initial={{ opacity: 0 }}
-          animate={isVisible.clients ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-        >
-          <ClientsCarousel>
-            {clientLogos.map((client, index) => (
-              <ClientLogo 
-                key={client.name}
-                src={client.src}
-                alt={client.name}
-                active={index === activeClient}
-                onClick={() => setActiveClient(index)}
-                as={motion.img}
-                whileHover={{ scale: 1.1, filter: 'grayscale(0)', opacity: 1 }}
-              />
-            ))}
-          </ClientsCarousel>
-          <ClientNavigation>
-            {clientLogos.map((_, index) => (
-              <ClientDot 
-                key={index}
-                active={index === activeClient}
-                onClick={() => setActiveClient(index)}
-                as={motion.div}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-              />
-            ))}
-          </ClientNavigation>
-        </ClientsContainer>
-      </SectionWrapper>
+      <ClientSection clientsRef={clientsRef}/>
 
       {/* Call To Action */}
       <CallToAction>
@@ -738,59 +680,6 @@ const ExploreButton = styled(Link)`
   box-shadow: 0 10px 20px rgba(30, 144, 255, 0.2);
 `;
 
-// Clients Section
-const ClientsContainer = styled.div`
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px 0;
-`;
-
-const ClientsCarousel = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-bottom: 30px;
-`;
-
-interface ClientDotProps {
-  active: boolean;
-}
-
-const ClientLogo = styled.img<ClientDotProps>`
-  height: 60px;
-  object-fit: contain;
-  filter: ${props => props.active ? 'grayscale(0)' : 'grayscale(100%)'};
-  opacity: ${props => props.active ? '1' : '0.5'};
-  transition: all 0.3s ease;
-  cursor: pointer;
-  
-  &:hover {
-    filter: grayscale(0);
-    opacity: 1;
-  }
-`;
-
-const ClientNavigation = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-`;
-
-const ClientDot = styled.div<ClientDotProps>`
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: ${props => props.active ? '#1e90ff' : '#ccc'};
-  cursor: pointer;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background-color: ${props => props.active ? '#1e90ff' : '#999'};
-  }
-`;
-
 // Industries Section
 const IndustriesGrid = styled.div`
   display: grid;
@@ -818,23 +707,15 @@ const IndustryItem = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.05);
 `;
 
-const IndustryIconContainer = styled.div`
-  background: linear-gradient(135deg, #1e90ff, #64b5f6);
+const IndustryIconContainer = styled.div<{ bgImage: string }>`
+  background: ${({ bgImage }) => `url(${bgImage}) center/cover no-repeat`};
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0 auto 20px;
+  animation: ${glowAnimation} 3s infinite ease-in-out;
 `;
 
-const IndustryIcon = styled.img`
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-`;
 
 const IndustryName = styled.h4`
   font-size: 1.2rem;

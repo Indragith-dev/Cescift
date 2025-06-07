@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
-import Automation from '../../../Assests/images/homeImages/automation.jpg';
-import electrical from '../../../Assests/images/homeImages/electrical.jpg';
+import Automation from '../../../Assests/images/homeImages/automationImage.jpg';
+import electrical from '../../../Assests/images/homeImages/electricalImage.jpg';
+import embedded from '../../../Assests/images/homeImages/embeddedImage.jpg';
 
 
 interface ExpertiseSectionProps {
@@ -29,7 +30,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ isVisible, sectionR
       delay: 0.5
     },
     {
-      image: electrical,
+      image: embedded,
       icon: "/src/assets/images/icon-embedded.png",
       title: "Embedded System Engineering",
       description: "Developing custom hardware and firmware solutions optimized for enhanced performance.",
@@ -60,9 +61,6 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ isVisible, sectionR
           >
             <ExpertiseImageContainer>
               <ExpertiseImage src={item.image} alt={item.title} />
-              <ExpertiseIconOverlay>
-                <ExpertiseIcon src={item.icon} alt={`${item.title} icon`} />
-              </ExpertiseIconOverlay>
             </ExpertiseImageContainer>
             <ExpertiseContentBox>
               <ExpertiseTitle>{item.title}</ExpertiseTitle>
@@ -165,7 +163,6 @@ const pulseEffect = keyframes`
 `;
 
 const ExpertiseImageContainer = styled.div`
-  position: relative;
   width: 100%;
   height: 200px;
   overflow: hidden;
@@ -182,28 +179,8 @@ const ExpertiseImage = styled.img`
   }
 `;
 
-const ExpertiseIconOverlay = styled.div`
-  position: absolute;
-  right: 15px;
-  bottom: -25px;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #1e90ff, #64b5f6);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  animation: ${pulseEffect} 2s infinite;
-  z-index: 2;
-`;
 
-const ExpertiseIcon = styled.img`
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-`;
+
 
 const ExpertiseContentBox = styled.div`
   padding: 30px 25px;
