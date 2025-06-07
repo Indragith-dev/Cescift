@@ -741,7 +741,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   align-items: center;
   justify-content: center;
   text-align: center;
-`,nz=()=>{v.useState(0);const[t,e]=v.useState({about:!1,expertise:!1,clients:!1,industries:!1}),n=v.useRef(null),r=v.useRef(null),i=v.useRef(null),a=v.useRef(null);return v.useEffect(()=>{const o={threshold:.2,rootMargin:"0px 0px -100px 0px"},s=c=>{c.forEach(f=>{f.isIntersecting&&e(d=>({...d,[f.target.id]:!0}))})},l=new IntersectionObserver(s,o);return n.current&&l.observe(n.current),r.current&&l.observe(r.current),i.current&&l.observe(i.current),a.current&&l.observe(a.current),()=>{n.current&&l.unobserve(n.current),r.current&&l.unobserve(r.current),i.current&&l.unobserve(i.current),a.current&&l.unobserve(a.current)}},[]),u.jsxs(rz,{children:[u.jsxs(iz,{children:[u.jsx(az,{}),u.jsxs(oz,{as:Me.div,initial:{opacity:0,x:-50},animate:{opacity:1,x:0},transition:{duration:.8,ease:"easeOut"},children:[u.jsxs(cz,{children:[u.jsx(lz,{children:"Delivering"})," Advanced Automation Solutions"]}),u.jsx(uz,{children:"Premier Instrumentation and Control System Integrator for diverse industries"}),u.jsxs(fz,{children:[u.jsx(eS,{to:"/services",as:Me.a,whileHover:{scale:1.05},whileTap:{scale:.95},children:"Explore Services"}),u.jsx(eS,{to:"/contact",secondary:!0,as:Me.a,whileHover:{scale:1.05},whileTap:{scale:.95},children:"Contact Us"})]})]}),u.jsxs(dz,{as:Me.div,initial:{opacity:0,x:50,rotateY:15},animate:{opacity:1,x:0,rotateY:0},transition:{duration:.8,delay:.3,ease:"easeOut"},children:[u.jsx(_h,{top:"10%",left:"10%",size:"40px",color:"#1e90ff",delay:"0s"}),u.jsx(_h,{top:"70%",left:"25%",size:"25px",color:"#64b5f6",delay:"0.3s"}),u.jsx(_h,{top:"30%",left:"80%",size:"30px",color:"#0a1e2f",delay:"0.6s"}),u.jsx(hz,{src:RM,alt:"Industrial Automation"})]})]}),u.jsxs(nS,{id:"about",ref:n,children:[u.jsxs(rS,{as:Me.h2,initial:{opacity:0,y:30},animate:t.about?{opacity:1,y:0}:{},transition:{duration:.8,ease:"easeOut"},children:["About ",u.jsx(Ih,{children:"CESCIFT"})]}),u.jsxs(mz,{children:[u.jsx(gz,{as:Me.p,initial:{opacity:0},animate:t.about?{opacity:1}:{},transition:{duration:.8,delay:.2,ease:"easeOut"},children:"CESCIFT is a premier Instrumentation and Control System Integrator delivering advanced technical solutions and services across diverse industries. We specialize in designing and implementing open, non-proprietary systems that ensure seamless integration with existing infrastructures and support future scalability, from the plant floor to enterprise-level applications."}),u.jsxs(yz,{children:[u.jsxs(iS,{as:Me.div,initial:{opacity:0,y:50},animate:t.about?{opacity:1,y:0}:{},transition:{duration:.8,delay:.4,ease:"easeOut"},whileHover:{y:-10,boxShadow:"0 20px 30px rgba(0, 0, 0, 0.1)"},children:[u.jsx(aS,{children:u.jsx(oS,{src:RT,alt:"Mission"})}),u.jsx(sS,{children:"Mission"}),u.jsx(lS,{children:"To deliver expertly engineered Industrial Automation and Electrical System Solutions that empower our clients to optimize production efficiently, ensuring exceptional customer satisfaction."})]}),u.jsxs(iS,{as:Me.div,initial:{opacity:0,y:50},animate:t.about?{opacity:1,y:0}:{},transition:{duration:.8,delay:.6,ease:"easeOut"},whileHover:{y:-10,boxShadow:"0 20px 30px rgba(0, 0, 0, 0.1)"},children:[u.jsx(aS,{children:u.jsx(oS,{src:MT,alt:"Vision"})}),u.jsx(sS,{children:"Vision"}),u.jsx(lS,{children:"We believe that a well-engineered control system is the backbone of a successful, profitable operation. Our automation and electrical systems are built on this principle and supported throughout the project life cycle with unwavering commitment."})]})]})]}),u.jsx(bz,{to:"/about",as:Me.a,initial:{opacity:0},animate:t.about?{opacity:1}:{},transition:{duration:.8,delay:.8,ease:"easeOut"},whileHover:{scale:1.05,boxShadow:"0 10px 25px rgba(30, 144, 255, 0.3)"},whileTap:{scale:.95},children:"Learn More About Us"})]}),u.jsx(jk,{isVisible:t.expertise,sectionRef:r}),u.jsx(dk,{}),u.jsxs(nS,{bgColor:"#f8fafd",id:"industries",ref:a,children:[u.jsxs(rS,{as:Me.h2,initial:{opacity:0,y:30},animate:t.industries?{opacity:1,y:0}:{},transition:{duration:.8,ease:"easeOut"},children:["Industries We ",u.jsx(Ih,{children:"Serve"})]}),u.jsx(xz,{children:[{name:"Oil & Gas",icon:Yy,delay:.2},{name:"Water & Wastewater",icon:qy,delay:.3},{name:"Food & Beverage",icon:Qy,delay:.4},{name:"Pharmaceuticals",icon:Xy,delay:.5},{name:"Power & Utilities",icon:Wy,delay:.6},{name:"Steel & Aluminum",icon:Zy,delay:.7}].map((o,s)=>u.jsxs(vz,{as:Me.div,initial:{opacity:0,y:30},animate:t.industries?{opacity:1,y:0}:{},transition:{duration:.1,delay:o.delay,ease:"easeOut"},whileHover:{y:-10,scale:1.05},children:[u.jsx(Sz,{bgImage:o.icon}),u.jsx(wz,{children:o.name})]},s))})]}),u.jsx(qk,{clientsRef:i}),u.jsxs(Ez,{children:[u.jsxs(Rz,{as:Me.div,initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},transition:{duration:.8,ease:"easeOut"},viewport:{once:!0,amount:.5},children:[u.jsx(Mz,{children:"Ready to optimize your operations?"}),u.jsx(Oz,{children:"Let's discuss how our automation solutions can transform your business."}),u.jsx(Dz,{to:"/contact",as:Me.a,whileHover:{scale:1.05,boxShadow:"0 10px 20px rgba(30, 144, 255, 0.4)"},whileTap:{scale:.95},children:"Contact Our Experts"})]}),u.jsx(jz,{})]}),u.jsxs(Cz,{children:[u.jsxs(Az,{as:Me.h2,initial:{opacity:0,y:20},whileInView:{opacity:1,y:0},transition:{duration:.8,ease:"easeOut"},viewport:{once:!0,amount:.5},children:["Our ",u.jsx(Ih,{children:"Location"})]}),u.jsx(Tz,{as:Me.div,initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},transition:{duration:.8,delay:.2,ease:"easeOut"},viewport:{once:!0,amount:.5},children:u.jsx("iframe",{title:"Company Location",src:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.131345672354!2d76.62821917504728!3d9.601602980459917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b062d1a165aee5d%3A0x9e1609a887c211f5!2sCeScift%20Technologies%20LLP!5e0!3m2!1sen!2sin!4v1715514313641!5m2!1sen!2sin",width:"100%",height:"400",frameBorder:"0",style:{border:0},allowFullScreen:!0,loading:"lazy"})})]})]})},rz=R.div`
+`,nz=()=>{v.useState(0);const[t,e]=v.useState({about:!1,expertise:!1,clients:!1,industries:!1}),n=v.useRef(null),r=v.useRef(null),i=v.useRef(null),a=v.useRef(null);return v.useEffect(()=>{const o={threshold:.2,rootMargin:"0px 0px -100px 0px"},s=c=>{c.forEach(f=>{f.isIntersecting&&e(d=>({...d,[f.target.id]:!0}))})},l=new IntersectionObserver(s,o);return n.current&&l.observe(n.current),r.current&&l.observe(r.current),i.current&&l.observe(i.current),a.current&&l.observe(a.current),()=>{n.current&&l.unobserve(n.current),r.current&&l.unobserve(r.current),i.current&&l.unobserve(i.current),a.current&&l.unobserve(a.current)}},[]),u.jsxs(rz,{children:[u.jsxs(iz,{children:[u.jsx(az,{}),u.jsxs(oz,{as:Me.div,initial:{opacity:0,x:-50},animate:{opacity:1,x:0},transition:{duration:.8,ease:"easeOut"},children:[u.jsxs(cz,{children:[u.jsx(lz,{children:"Delivering"})," Advanced Automation Solutions"]}),u.jsx(uz,{children:"Premier Instrumentation and Control System Integrator for diverse industries"}),u.jsxs(fz,{children:[u.jsx(Me.div,{whileHover:{scale:1.05},whileTap:{scale:.95},children:u.jsx(eS,{to:"/services",children:"Explore Services"})}),u.jsx(Me.div,{whileHover:{scale:1.05},whileTap:{scale:.95},children:u.jsx(eS,{to:"/contact",secondary:!0,children:"Contact Us"})})]})]}),u.jsxs(dz,{as:Me.div,initial:{opacity:0,x:50,rotateY:15},animate:{opacity:1,x:0,rotateY:0},transition:{duration:.8,delay:.3,ease:"easeOut"},children:[u.jsx(_h,{top:"10%",left:"10%",size:"40px",color:"#1e90ff",delay:"0s"}),u.jsx(_h,{top:"70%",left:"25%",size:"25px",color:"#64b5f6",delay:"0.3s"}),u.jsx(_h,{top:"30%",left:"80%",size:"30px",color:"#0a1e2f",delay:"0.6s"}),u.jsx(hz,{src:RM,alt:"Industrial Automation"})]})]}),u.jsxs(nS,{id:"about",ref:n,children:[u.jsxs(rS,{as:Me.h2,initial:{opacity:0,y:30},animate:t.about?{opacity:1,y:0}:{},transition:{duration:.8,ease:"easeOut"},children:["About ",u.jsx(Ih,{children:"CESCIFT"})]}),u.jsxs(mz,{children:[u.jsx(gz,{as:Me.p,initial:{opacity:0},animate:t.about?{opacity:1}:{},transition:{duration:.8,delay:.2,ease:"easeOut"},children:"CESCIFT is a premier Instrumentation and Control System Integrator delivering advanced technical solutions and services across diverse industries. We specialize in designing and implementing open, non-proprietary systems that ensure seamless integration with existing infrastructures and support future scalability, from the plant floor to enterprise-level applications."}),u.jsxs(yz,{children:[u.jsxs(iS,{as:Me.div,initial:{opacity:0,y:50},animate:t.about?{opacity:1,y:0}:{},transition:{duration:.8,delay:.4,ease:"easeOut"},whileHover:{y:-10,boxShadow:"0 20px 30px rgba(0, 0, 0, 0.1)"},children:[u.jsx(aS,{children:u.jsx(oS,{src:RT,alt:"Mission"})}),u.jsx(sS,{children:"Mission"}),u.jsx(lS,{children:"To deliver expertly engineered Industrial Automation and Electrical System Solutions that empower our clients to optimize production efficiently, ensuring exceptional customer satisfaction."})]}),u.jsxs(iS,{as:Me.div,initial:{opacity:0,y:50},animate:t.about?{opacity:1,y:0}:{},transition:{duration:.8,delay:.6,ease:"easeOut"},whileHover:{y:-10,boxShadow:"0 20px 30px rgba(0, 0, 0, 0.1)"},children:[u.jsx(aS,{children:u.jsx(oS,{src:MT,alt:"Vision"})}),u.jsx(sS,{children:"Vision"}),u.jsx(lS,{children:"We believe that a well-engineered control system is the backbone of a successful, profitable operation. Our automation and electrical systems are built on this principle and supported throughout the project life cycle with unwavering commitment."})]})]})]}),u.jsx(Me.div,{initial:{opacity:0},animate:t.about?{opacity:1}:{},transition:{duration:.8,delay:.8,ease:"easeOut"},whileHover:{scale:1.05},whileTap:{scale:.95},style:{display:"block",margin:"50px auto 0",maxWidth:"250px"},children:u.jsx(bz,{to:"/about",children:"Learn More About Us"})})]}),u.jsx(jk,{isVisible:t.expertise,sectionRef:r}),u.jsx(dk,{}),u.jsxs(nS,{bgColor:"#f8fafd",id:"industries",ref:a,children:[u.jsxs(rS,{as:Me.h2,initial:{opacity:0,y:30},animate:t.industries?{opacity:1,y:0}:{},transition:{duration:.8,ease:"easeOut"},children:["Industries We ",u.jsx(Ih,{children:"Serve"})]}),u.jsx(xz,{children:[{name:"Oil & Gas",icon:Yy,delay:.2},{name:"Water & Wastewater",icon:qy,delay:.3},{name:"Food & Beverage",icon:Qy,delay:.4},{name:"Pharmaceuticals",icon:Xy,delay:.5},{name:"Power & Utilities",icon:Wy,delay:.6},{name:"Steel & Aluminum",icon:Zy,delay:.7}].map((o,s)=>u.jsxs(vz,{as:Me.div,initial:{opacity:0,y:30},animate:t.industries?{opacity:1,y:0}:{},transition:{duration:.1,delay:o.delay,ease:"easeOut"},whileHover:{y:-10,scale:1.05},children:[u.jsx(Sz,{bgImage:o.icon}),u.jsx(wz,{children:o.name})]},s))})]}),u.jsx(qk,{clientsRef:i}),u.jsxs(Ez,{children:[u.jsxs(Rz,{as:Me.div,initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},transition:{duration:.8,ease:"easeOut"},viewport:{once:!0,amount:.5},children:[u.jsx(Mz,{children:"Ready to optimize your operations?"}),u.jsx(Oz,{children:"Let's discuss how our automation solutions can transform your business."}),u.jsx(Me.div,{whileHover:{scale:1.05},whileTap:{scale:.95},style:{display:"inline-block"},children:u.jsx(Dz,{to:"/contact",children:"Contact Our Experts"})})]}),u.jsx(jz,{})]}),u.jsxs(Cz,{children:[u.jsxs(Az,{as:Me.h2,initial:{opacity:0,y:20},whileInView:{opacity:1,y:0},transition:{duration:.8,ease:"easeOut"},viewport:{once:!0,amount:.5},children:["Our ",u.jsx(Ih,{children:"Location"})]}),u.jsx(Tz,{as:Me.div,initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},transition:{duration:.8,delay:.2,ease:"easeOut"},viewport:{once:!0,amount:.5},children:u.jsx("iframe",{title:"Company Location",src:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.131345672354!2d76.62821917504728!3d9.601602980459917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b062d1a165aee5d%3A0x9e1609a887c211f5!2sCeScift%20Technologies%20LLP!5e0!3m2!1sen!2sin!4v1715514313641!5m2!1sen!2sin",width:"100%",height:"400",frameBorder:"0",style:{border:0},allowFullScreen:!0,loading:"lazy"})})]})]})},rz=R.div`
   padding-top: 80px;
   overflow-x: hidden;
 `,iz=R.section`
@@ -751,7 +751,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   color: white;
   position: relative;
   overflow: hidden;
-  
+
   @media (max-width: 768px) {
     flex-direction: column;
     min-height: auto;
@@ -772,15 +772,23 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    radial-gradient(circle at 10% 10%, rgba(30, 144, 255, 0.1) 0%, transparent 20%),
-    radial-gradient(circle at 90% 90%, rgba(100, 181, 246, 0.1) 0%, transparent 25%),
+  background-image: radial-gradient(
+      circle at 10% 10%,
+      rgba(30, 144, 255, 0.1) 0%,
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(100, 181, 246, 0.1) 0%,
+      transparent 25%
+    ),
     radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.05) 0%, transparent 15%);
   opacity: 1;
   z-index: 0;
-  
-  &:before, &:after {
-    content: '';
+
+  &:before,
+  &:after {
+    content: "";
     position: absolute;
     width: 200px;
     height: 200px;
@@ -788,13 +796,13 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
     background: rgba(30, 144, 255, 0.03);
     z-index: 0;
   }
-  
+
   &:before {
     top: 10%;
     left: 15%;
     animation: ${tS} 15s infinite ease-in-out;
   }
-  
+
   &:after {
     bottom: 20%;
     right: 10%;
@@ -810,7 +818,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+
   @media (max-width: 768px) {
     padding: 60px 5%;
     text-align: center;
@@ -841,11 +849,11 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.5px;
-  
+
   @media (max-width: 992px) {
     font-size: 3rem;
   }
-  
+
   @media (max-width: 768px) {
     font-size: 2.5rem;
   }
@@ -855,7 +863,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   line-height: 1.6;
   max-width: 600px;
   color: rgba(255, 255, 255, 0.85);
-  
+
   @media (max-width: 768px) {
     font-size: 1.1rem;
     margin-left: auto;
@@ -864,12 +872,13 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
 `,fz=R.div`
   display: flex;
   gap: 20px;
-  
+
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
   }
 `,eS=R(sr)`
+  cursor: pointer;
   padding: 16px 32px;
   background-color: ${t=>t.secondary?"transparent":"#1e90ff"};
   color: white;
@@ -880,12 +889,12 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   transition: all 0.3s ease;
   border: 2px solid ${t=>t.secondary?"white":"#1e90ff"};
   box-shadow: ${t=>t.secondary?"none":"0 10px 20px rgba(30, 144, 255, 0.3)"};
-  
+
   &:hover {
     background-color: ${t=>t.secondary?"rgba(255, 255, 255, 0.1)":"#0b78e5"};
     box-shadow: ${t=>t.secondary?"0 5px 15px rgba(255, 255, 255, 0.1)":"0 15px 25px rgba(30, 144, 255, 0.4)"};
   }
-  
+
   @media (max-width: 768px) {
     width: 80%;
     text-align: center;
@@ -896,7 +905,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   @media (max-width: 768px) {
     min-height: 300px;
   }
@@ -922,7 +931,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   z-index: 0;
   animation: ${pz} 6s infinite ease-in-out;
   animation-delay: ${t=>t.delay||"0s"};
-  
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -935,7 +944,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   border-radius: 10px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
-  
+
   &:hover {
     transform: scale(1.02);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
@@ -945,7 +954,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   background-color: ${t=>t.bgColor||"white"};
   position: relative;
   overflow: hidden;
-  
+
   @media (max-width: 768px) {
     padding: 70px 5%;
   }
@@ -956,9 +965,9 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   color: #0a1e2f;
   position: relative;
   font-weight: 800;
-  
+
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -20px;
     left: 50%;
@@ -968,7 +977,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
     background: linear-gradient(90deg, #1e90ff, #64b5f6);
     border-radius: 2px;
   }
-  
+
   @media (max-width: 768px) {
     font-size: 2.2rem;
     margin-bottom: 50px;
@@ -985,7 +994,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   margin-left: auto;
   margin-right: auto;
   color: #333;
-  
+
   @media (max-width: 768px) {
     font-size: 1.1rem;
   }
@@ -995,7 +1004,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   gap: 40px;
   max-width: 900px;
   margin: 0 auto;
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
@@ -1036,8 +1045,8 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   line-height: 1.6;
   color: #555;
 `,bz=R(sr)`
+  cursor: pointer;
   display: block;
-  margin: 50px auto 0;
   padding: 14px 30px;
   background: linear-gradient(90deg, #1e90ff, #64b5f6);
   color: white;
@@ -1045,7 +1054,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   border-radius: 50px;
   font-weight: 600;
   text-align: center;
-  max-width: 250px;
+  width: 100%;
   transition: all 0.3s ease;
   box-shadow: 0 10px 20px rgba(30, 144, 255, 0.2);
 `,xz=R.div`
@@ -1054,11 +1063,11 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   gap: 30px;
   max-width: 1000px;
   margin: 0 auto;
-  
+
   @media (max-width: 992px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
   }
@@ -1084,7 +1093,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
 `,Cz=R.section`
   padding: 80px 5%;
   background-color: white;
-  
+
   @media (max-width: 768px) {
     padding: 60px 5%;
   }
@@ -1094,7 +1103,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   margin-bottom: 40px;
   color: #0a1e2f;
   font-weight: 800;
-  
+
   @media (max-width: 768px) {
     font-size: 2rem;
   }
@@ -1104,7 +1113,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  
+
   iframe {
     display: block;
   }
@@ -1114,7 +1123,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   color: white;
   position: relative;
   overflow: hidden;
-  
+
   @media (max-width: 768px) {
     padding: 80px 5%;
   }
@@ -1124,9 +1133,16 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    radial-gradient(circle at 20% 20%, rgba(30, 144, 255, 0.15) 0%, transparent 30%),
-    radial-gradient(circle at 80% 80%, rgba(100, 181, 246, 0.1) 0%, transparent 20%);
+  background-image: radial-gradient(
+      circle at 20% 20%,
+      rgba(30, 144, 255, 0.15) 0%,
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(100, 181, 246, 0.1) 0%,
+      transparent 20%
+    );
   z-index: 0;
 `,Rz=R.div`
   max-width: 800px;
@@ -1138,7 +1154,7 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   font-size: 2.8rem;
   margin-bottom: 20px;
   font-weight: 800;
-  
+
   @media (max-width: 768px) {
     font-size: 2.2rem;
   }
@@ -1147,11 +1163,12 @@ Please change the parent <Route path="${m}"> to <Route path="${m==="/"?"*":`${m}
   margin-bottom: 40px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
-  
+
   @media (max-width: 768px) {
     font-size: 1.1rem;
   }
 `,Dz=R(sr)`
+  cursor: pointer;
   display: inline-block;
   padding: 18px 40px;
   background: linear-gradient(90deg, #1e90ff, #64b5f6);
