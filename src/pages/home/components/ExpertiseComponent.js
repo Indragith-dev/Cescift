@@ -2,8 +2,9 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
-import Automation from '../../../Assests/images/homeImages/automation.jpg';
-import electrical from '../../../Assests/images/homeImages/electrical.jpg';
+import Automation from '../../../Assests/images/homeImages/automationImage.jpg';
+import electrical from '../../../Assests/images/homeImages/electricalImage.jpg';
+import embedded from '../../../Assests/images/homeImages/embeddedImage.jpg';
 const ExpertiseSection = ({ isVisible, sectionRef }) => {
     const expertiseItems = [
         {
@@ -23,7 +24,7 @@ const ExpertiseSection = ({ isVisible, sectionRef }) => {
             delay: 0.5
         },
         {
-            image: electrical,
+            image: embedded,
             icon: "/src/assets/images/icon-embedded.png",
             title: "Embedded System Engineering",
             description: "Developing custom hardware and firmware solutions optimized for enhanced performance.",
@@ -31,7 +32,7 @@ const ExpertiseSection = ({ isVisible, sectionRef }) => {
             delay: 0.7
         }
     ];
-    return (_jsxs(SectionWrapper, { bgColor: "#f8fafd", id: "expertise", ref: sectionRef, children: [_jsxs(SectionTitle, { as: motion.h2, initial: { opacity: 0, y: 30 }, animate: isVisible ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.8, ease: "easeOut" }, children: ["Our ", _jsx(GradientText, { children: "Expertise" })] }), _jsx(ExpertiseGrid, { children: expertiseItems.map((item, index) => (_jsxs(ExpertiseCard, { as: motion.div, initial: { opacity: 0, y: 50 }, animate: isVisible ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.8, delay: item.delay, ease: "easeOut" }, whileHover: { y: -10, boxShadow: '0 20px 30px rgba(0, 0, 0, 0.1)' }, children: [_jsxs(ExpertiseImageContainer, { children: [_jsx(ExpertiseImage, { src: item.image, alt: item.title }), _jsx(ExpertiseIconOverlay, { children: _jsx(ExpertiseIcon, { src: item.icon, alt: `${item.title} icon` }) })] }), _jsxs(ExpertiseContentBox, { children: [_jsx(ExpertiseTitle, { children: item.title }), _jsx(ExpertiseDivider, {}), _jsx(ExpertiseText, { children: item.description }), _jsxs(CardLink, { to: item.link, children: ["Learn More", _jsx(CardLinkArrow, { children: "\u2192" })] })] })] }, index))) })] }));
+    return (_jsxs(SectionWrapper, { bgColor: "#f8fafd", id: "expertise", ref: sectionRef, children: [_jsxs(SectionTitle, { as: motion.h2, initial: { opacity: 0, y: 30 }, animate: isVisible ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.8, ease: "easeOut" }, children: ["Our ", _jsx(GradientText, { children: "Expertise" })] }), _jsx(ExpertiseGrid, { children: expertiseItems.map((item, index) => (_jsxs(ExpertiseCard, { as: motion.div, initial: { opacity: 0, y: 50 }, animate: isVisible ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.8, delay: item.delay, ease: "easeOut" }, whileHover: { y: -10, boxShadow: '0 20px 30px rgba(0, 0, 0, 0.1)' }, children: [_jsx(ExpertiseImageContainer, { children: _jsx(ExpertiseImage, { src: item.image, alt: item.title }) }), _jsxs(ExpertiseContentBox, { children: [_jsx(ExpertiseTitle, { children: item.title }), _jsx(ExpertiseDivider, {}), _jsx(ExpertiseText, { children: item.description }), _jsxs(CardLink, { to: item.link, children: ["Learn More", _jsx(CardLinkArrow, { children: "\u2192" })] })] })] }, index))) })] }));
 };
 export default ExpertiseSection;
 const SectionWrapper = styled.section `
@@ -106,7 +107,6 @@ const pulseEffect = keyframes `
   100% { box-shadow: 0 0 0 0 rgba(30, 144, 255, 0); }
 `;
 const ExpertiseImageContainer = styled.div `
-  position: relative;
   width: 100%;
   height: 200px;
   overflow: hidden;
@@ -120,27 +120,6 @@ const ExpertiseImage = styled.img `
   ${ExpertiseCard}:hover & {
     transform: scale(1.05);
   }
-`;
-const ExpertiseIconOverlay = styled.div `
-  position: absolute;
-  right: 15px;
-  bottom: -25px;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #1e90ff, #64b5f6);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  animation: ${pulseEffect} 2s infinite;
-  z-index: 2;
-`;
-const ExpertiseIcon = styled.img `
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
 `;
 const ExpertiseContentBox = styled.div `
   padding: 30px 25px;

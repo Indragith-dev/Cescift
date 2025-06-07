@@ -2,13 +2,19 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import FeatureImage from '../../Assests/images/homeImages/featuredImage.png';
-import Adnoc from '../../Assests/images/clients/hindustanUL.png';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import StoreComponent from './components/StoreCompoent';
 import Mission from '../../Assests/images/homeImages/mission.png';
 import Vission from '../../Assests/images/homeImages/vission.png';
 import ExpertiseSection from './components/ExpertiseComponent';
+import OilImage from '../../Assests/images/homeImages/industriesImages/oilAndGasImage.jpg';
+import WaterImage from '../../Assests/images/homeImages/industriesImages/waterAndWaste.jpg';
+import FoodImage from '../../Assests/images/homeImages/industriesImages/food&BeverageImage.jpg';
+import PharmaImage from '../../Assests/images/homeImages/industriesImages/pharmaImage.jpg';
+import PowerImage from '../../Assests/images/homeImages/industriesImages/powerImage.jpg';
+import SteelImage from '../../Assests/images/homeImages/industriesImages/steelImage.jpg';
+import ClientSection from './components/ClientComponent';
 const HomePage = () => {
     // For client logo animation
     const [activeClient, setActiveClient] = useState(0);
@@ -24,25 +30,6 @@ const HomePage = () => {
     const expertiseRef = useRef(null);
     const clientsRef = useRef(null);
     const industriesRef = useRef(null);
-    // Client logos from the folder structure
-    const clientLogos = [
-        { name: 'ADNOC', src: Adnoc },
-        { name: 'AEIS', src: Adnoc },
-        { name: 'Apollo', src: Adnoc },
-        { name: 'Dhathri', src: Adnoc },
-        { name: 'Fluitron', src: Adnoc },
-        { name: 'Hindustan', src: Adnoc },
-        { name: 'Hindustan UL', src: Adnoc },
-        { name: 'Indian Oil', src: Adnoc },
-        { name: 'Indian Railway', src: Adnoc }
-    ];
-    // Auto rotate clients
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveClient((prev) => (prev + 1) % clientLogos.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, [clientLogos.length]);
     // Intersection observer for scroll animations
     useEffect(() => {
         const observerOptions = {
@@ -77,13 +64,13 @@ const HomePage = () => {
         };
     }, []);
     return (_jsxs(HomeContainer, { children: [_jsxs(HeroSection, { children: [_jsx(HeroBackgroundAnimation, {}), _jsxs(HeroContent, { as: motion.div, initial: { opacity: 0, x: -50 }, animate: { opacity: 1, x: 0 }, transition: { duration: 0.8, ease: "easeOut" }, children: [_jsxs(HeroTitle, { children: [_jsx(GradientSpan, { children: "Delivering" }), " Advanced Automation Solutions"] }), _jsx(HeroSubtitle, { children: "Premier Instrumentation and Control System Integrator for diverse industries" }), _jsxs(HeroButtonGroup, { children: [_jsx(HeroButton, { to: "/services", as: motion.a, whileHover: { scale: 1.05 }, whileTap: { scale: 0.95 }, children: "Explore Services" }), _jsx(HeroButton, { to: "/contact", secondary: true, as: motion.a, whileHover: { scale: 1.05 }, whileTap: { scale: 0.95 }, children: "Contact Us" })] })] }), _jsxs(HeroImageWrapper, { as: motion.div, initial: { opacity: 0, x: 50, rotateY: 15 }, animate: { opacity: 1, x: 0, rotateY: 0 }, transition: { duration: 0.8, delay: 0.3, ease: "easeOut" }, children: [_jsx(HeroGeometricShape, { top: "10%", left: "10%", size: "40px", color: "#1e90ff", delay: "0s" }), _jsx(HeroGeometricShape, { top: "70%", left: "25%", size: "25px", color: "#64b5f6", delay: "0.3s" }), _jsx(HeroGeometricShape, { top: "30%", left: "80%", size: "30px", color: "#0a1e2f", delay: "0.6s" }), _jsx(HeroImage, { src: FeatureImage, alt: "Industrial Automation" })] })] }), _jsxs(SectionWrapper, { id: "about", ref: aboutRef, children: [_jsxs(SectionTitle, { as: motion.h2, initial: { opacity: 0, y: 30 }, animate: isVisible.about ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.8, ease: "easeOut" }, children: ["About ", _jsx(GradientText, { children: "CESCIFT" })] }), _jsxs(SectionContent, { children: [_jsx(AboutText, { as: motion.p, initial: { opacity: 0 }, animate: isVisible.about ? { opacity: 1 } : {}, transition: { duration: 0.8, delay: 0.2, ease: "easeOut" }, children: "CESCIFT is a premier Instrumentation and Control System Integrator delivering advanced technical solutions and services across diverse industries. We specialize in designing and implementing open, non-proprietary systems that ensure seamless integration with existing infrastructures and support future scalability, from the plant floor to enterprise-level applications." }), _jsxs(AboutCardContainer, { children: [_jsxs(AboutCard, { as: motion.div, initial: { opacity: 0, y: 50 }, animate: isVisible.about ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.8, delay: 0.4, ease: "easeOut" }, whileHover: { y: -10, boxShadow: '0 20px 30px rgba(0, 0, 0, 0.1)' }, children: [_jsx(CardIconWrapper, { children: _jsx(CardIcon, { src: Mission, alt: "Mission" }) }), _jsx(CardTitle, { children: "Mission" }), _jsx(CardText, { children: "To deliver expertly engineered Industrial Automation and Electrical System Solutions that empower our clients to optimize production efficiently, ensuring exceptional customer satisfaction." })] }), _jsxs(AboutCard, { as: motion.div, initial: { opacity: 0, y: 50 }, animate: isVisible.about ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.8, delay: 0.6, ease: "easeOut" }, whileHover: { y: -10, boxShadow: '0 20px 30px rgba(0, 0, 0, 0.1)' }, children: [_jsx(CardIconWrapper, { children: _jsx(CardIcon, { src: Vission, alt: "Vision" }) }), _jsx(CardTitle, { children: "Vision" }), _jsx(CardText, { children: "We believe that a well-engineered control system is the backbone of a successful, profitable operation. Our automation and electrical systems are built on this principle and supported throughout the project life cycle with unwavering commitment." })] })] })] }), _jsx(ExploreButton, { to: "/about", as: motion.a, initial: { opacity: 0 }, animate: isVisible.about ? { opacity: 1 } : {}, transition: { duration: 0.8, delay: 0.8, ease: "easeOut" }, whileHover: { scale: 1.05, boxShadow: '0 10px 25px rgba(30, 144, 255, 0.3)' }, whileTap: { scale: 0.95 }, children: "Learn More About Us" })] }), _jsx(ExpertiseSection, { isVisible: isVisible.expertise, sectionRef: expertiseRef }), _jsx(StoreComponent, {}), _jsxs(SectionWrapper, { bgColor: "#f8fafd", id: "industries", ref: industriesRef, children: [_jsxs(SectionTitle, { as: motion.h2, initial: { opacity: 0, y: 30 }, animate: isVisible.industries ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.8, ease: "easeOut" }, children: ["Industries We ", _jsx(GradientText, { children: "Serve" })] }), _jsx(IndustriesGrid, { children: [
-                            { name: "Oil & Gas", icon: "/src/assets/images/industry-oil.png", delay: 0.2 },
-                            { name: "Water & Wastewater", icon: "/src/assets/images/industry-water.png", delay: 0.3 },
-                            { name: "Food & Beverage", icon: "/src/assets/images/industry-food.png", delay: 0.4 },
-                            { name: "Pharmaceuticals", icon: "/src/assets/images/industry-pharma.png", delay: 0.5 },
-                            { name: "Power & Utilities", icon: "/src/assets/images/industry-power.png", delay: 0.6 },
-                            { name: "Steel & Aluminum", icon: "/src/assets/images/industry-metal.png", delay: 0.7 }
-                        ].map((industry, index) => (_jsxs(IndustryItem, { as: motion.div, initial: { opacity: 0, y: 30 }, animate: isVisible.industries ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.1, delay: industry.delay, ease: "easeOut" }, whileHover: { y: -10, scale: 1.05 }, children: [_jsx(IndustryIconContainer, { children: _jsx(IndustryIcon, { src: industry.icon, alt: industry.name }) }), _jsx(IndustryName, { children: industry.name })] }, index))) })] }), _jsxs(SectionWrapper, { id: "clients", ref: clientsRef, children: [_jsxs(SectionTitle, { as: motion.h2, initial: { opacity: 0, y: 30 }, animate: isVisible.clients ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.8, ease: "easeOut" }, children: ["Our Trusted ", _jsx(GradientText, { children: "Clients" })] }), _jsxs(ClientsContainer, { as: motion.div, initial: { opacity: 0 }, animate: isVisible.clients ? { opacity: 1 } : {}, transition: { duration: 0.8, delay: 0.3, ease: "easeOut" }, children: [_jsx(ClientsCarousel, { children: clientLogos.map((client, index) => (_jsx(ClientLogo, { src: client.src, alt: client.name, active: index === activeClient, onClick: () => setActiveClient(index), as: motion.img, whileHover: { scale: 1.1, filter: 'grayscale(0)', opacity: 1 } }, client.name))) }), _jsx(ClientNavigation, { children: clientLogos.map((_, index) => (_jsx(ClientDot, { active: index === activeClient, onClick: () => setActiveClient(index), as: motion.div, whileHover: { scale: 1.2 }, whileTap: { scale: 0.9 } }, index))) })] })] }), _jsxs(CallToAction, { children: [_jsxs(CTAContent, { as: motion.div, initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8, ease: "easeOut" }, viewport: { once: true, amount: 0.5 }, children: [_jsx(CTATitle, { children: "Ready to optimize your operations?" }), _jsx(CTAText, { children: "Let's discuss how our automation solutions can transform your business." }), _jsx(CTAButton, { to: "/contact", as: motion.a, whileHover: { scale: 1.05, boxShadow: '0 10px 20px rgba(30, 144, 255, 0.4)' }, whileTap: { scale: 0.95 }, children: "Contact Our Experts" })] }), _jsx(CTABackground, {})] }), _jsxs(MapSection, { children: [_jsxs(MapTitle, { as: motion.h2, initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8, ease: "easeOut" }, viewport: { once: true, amount: 0.5 }, children: ["Our ", _jsx(GradientText, { children: "Location" })] }), _jsx(MapWrapper, { as: motion.div, initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay: 0.2, ease: "easeOut" }, viewport: { once: true, amount: 0.5 }, children: _jsx("iframe", { title: "Company Location", src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.131345672354!2d76.62821917504728!3d9.601602980459917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b062d1a165aee5d%3A0x9e1609a887c211f5!2sCeScift%20Technologies%20LLP!5e0!3m2!1sen!2sin!4v1715514313641!5m2!1sen!2sin", width: "100%", height: "400", frameBorder: "0", style: { border: 0 }, allowFullScreen: true, loading: "lazy" }) })] })] }));
+                            { name: "Oil & Gas", icon: OilImage, delay: 0.2 },
+                            { name: "Water & Wastewater", icon: WaterImage, delay: 0.3 },
+                            { name: "Food & Beverage", icon: FoodImage, delay: 0.4 },
+                            { name: "Pharmaceuticals", icon: PharmaImage, delay: 0.5 },
+                            { name: "Power & Utilities", icon: PowerImage, delay: 0.6 },
+                            { name: "Steel & Aluminum", icon: SteelImage, delay: 0.7 }
+                        ].map((industry, index) => (_jsxs(IndustryItem, { as: motion.div, initial: { opacity: 0, y: 30 }, animate: isVisible.industries ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.1, delay: industry.delay, ease: "easeOut" }, whileHover: { y: -10, scale: 1.05 }, children: [_jsx(IndustryIconContainer, { bgImage: industry.icon }), _jsx(IndustryName, { children: industry.name })] }, index))) })] }), _jsx(ClientSection, { clientsRef: clientsRef }), _jsxs(CallToAction, { children: [_jsxs(CTAContent, { as: motion.div, initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8, ease: "easeOut" }, viewport: { once: true, amount: 0.5 }, children: [_jsx(CTATitle, { children: "Ready to optimize your operations?" }), _jsx(CTAText, { children: "Let's discuss how our automation solutions can transform your business." }), _jsx(CTAButton, { to: "/contact", as: motion.a, whileHover: { scale: 1.05, boxShadow: '0 10px 20px rgba(30, 144, 255, 0.4)' }, whileTap: { scale: 0.95 }, children: "Contact Our Experts" })] }), _jsx(CTABackground, {})] }), _jsxs(MapSection, { children: [_jsxs(MapTitle, { as: motion.h2, initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8, ease: "easeOut" }, viewport: { once: true, amount: 0.5 }, children: ["Our ", _jsx(GradientText, { children: "Location" })] }), _jsx(MapWrapper, { as: motion.div, initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay: 0.2, ease: "easeOut" }, viewport: { once: true, amount: 0.5 }, children: _jsx("iframe", { title: "Company Location", src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.131345672354!2d76.62821917504728!3d9.601602980459917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b062d1a165aee5d%3A0x9e1609a887c211f5!2sCeScift%20Technologies%20LLP!5e0!3m2!1sen!2sin!4v1715514313641!5m2!1sen!2sin", width: "100%", height: "400", frameBorder: "0", style: { border: 0 }, allowFullScreen: true, loading: "lazy" }) })] })] }));
 };
 export default HomePage;
 // Styled Components
@@ -424,50 +411,6 @@ const ExploreButton = styled(Link) `
   transition: all 0.3s ease;
   box-shadow: 0 10px 20px rgba(30, 144, 255, 0.2);
 `;
-// Clients Section
-const ClientsContainer = styled.div `
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px 0;
-`;
-const ClientsCarousel = styled.div `
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-bottom: 30px;
-`;
-const ClientLogo = styled.img `
-  height: 60px;
-  object-fit: contain;
-  filter: ${props => props.active ? 'grayscale(0)' : 'grayscale(100%)'};
-  opacity: ${props => props.active ? '1' : '0.5'};
-  transition: all 0.3s ease;
-  cursor: pointer;
-  
-  &:hover {
-    filter: grayscale(0);
-    opacity: 1;
-  }
-`;
-const ClientNavigation = styled.div `
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-`;
-const ClientDot = styled.div `
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: ${props => props.active ? '#1e90ff' : '#ccc'};
-  cursor: pointer;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background-color: ${props => props.active ? '#1e90ff' : '#999'};
-  }
-`;
 // Industries Section
 const IndustriesGrid = styled.div `
   display: grid;
@@ -494,20 +437,12 @@ const IndustryItem = styled.div `
   border: 1px solid rgba(0, 0, 0, 0.05);
 `;
 const IndustryIconContainer = styled.div `
-  background: linear-gradient(135deg, #1e90ff, #64b5f6);
+  background: ${({ bgImage }) => `url(${bgImage}) center/cover no-repeat`};
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0 auto 20px;
-`;
-const IndustryIcon = styled.img `
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
+  animation: ${glowAnimation} 3s infinite ease-in-out;
 `;
 const IndustryName = styled.h4 `
   font-size: 1.2rem;
