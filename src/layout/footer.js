@@ -1,10 +1,10 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { Link } from 'react-router-dom';
-import { FaLinkedin, FaFacebook, FaTwitter, FaInstagram, FaMapMarkerAlt, FaEnvelope, FaPhone } from 'react-icons/fa';
-import styled from 'styled-components';
-import logo from '../Assests/icons/logo.png';
+import { Link } from "react-router-dom";
+import { FaMapMarkerAlt, FaEnvelope, FaPhone, } from "react-icons/fa";
+import styled from "styled-components";
+import logo from "../Assests/icons/logo.png";
 const Footer = () => {
-    return (_jsxs(FooterContainer, { children: [_jsx(FooterBackground, {}), _jsxs(FooterWrapper, { children: [_jsxs(FooterTop, { children: [_jsxs(LogoSection, { children: [_jsx(LogoBox, { children: _jsx(CompanyLogo, { src: logo, alt: "CESCIFT Logo" }) }), _jsx(CompanyName, { children: "CeScift Technologies LLP" }), _jsx(TagLine, { children: "Empowering Industry with Smart Automation" }), _jsxs(SocialLinks, { children: [_jsx(SocialIcon, { href: "https://linkedin.com", target: "_blank", rel: "noopener noreferrer", children: _jsx(FaLinkedin, {}) }), _jsx(SocialIcon, { href: "https://facebook.com", target: "_blank", rel: "noopener noreferrer", children: _jsx(FaFacebook, {}) }), _jsx(SocialIcon, { href: "https://twitter.com", target: "_blank", rel: "noopener noreferrer", children: _jsx(FaTwitter, {}) }), _jsx(SocialIcon, { href: "https://instagram.com", target: "_blank", rel: "noopener noreferrer", children: _jsx(FaInstagram, {}) })] })] }), _jsxs(FooterLinks, { children: [_jsxs(FooterColumn, { children: [_jsx(ColumnTitle, { children: "Company" }), _jsx(FooterLink, { to: "/about", children: "About Us" }), _jsx(FooterLink, { to: "/services", children: "Services" }), _jsx(FooterLink, { to: "/products", children: "Products" }), _jsx(FooterLink, { to: "/expertise", children: "Expertise" })] }), _jsxs(ContactColumn, { children: [_jsx(ColumnTitle, { children: "Contact Us" }), _jsxs(ContactInfo, { children: [_jsxs(ContactItem, { children: [_jsx(ContactIcon, { children: _jsx(FaMapMarkerAlt, {}) }), _jsxs("div", { children: [_jsx(ContactText, { children: "CeScift Technologies LLP" }), _jsx(ContactText, { children: "Thiruvalla, Kerala, India" })] })] }), _jsxs(ContactLink, { href: "mailto:info@cescift.com", children: [_jsx(ContactIcon, { children: _jsx(FaEnvelope, {}) }), _jsx(ContactText, { children: "info@cescift.com" })] }), _jsxs(ContactLink, { href: "tel:+918848513468", children: [_jsx(ContactIcon, { children: _jsx(FaPhone, {}) }), _jsx(ContactText, { children: "+91 8848513468" })] })] })] })] })] }), _jsx(FooterDivider, {}), _jsxs(FooterBottom, { children: [_jsxs(Copyright, { children: ["\u00A9 ", new Date().getFullYear(), " CESCIFT Technologies LLP. All rights reserved."] }), _jsx(DesignedBy, { children: "Designed by CESCIFT Technologies" })] })] })] }));
+    return (_jsxs(FooterContainer, { children: [_jsx(FooterBackground, {}), _jsxs(FooterWrapper, { children: [_jsxs(FooterTop, { children: [_jsxs(LogoSection, { children: [_jsx(LogoBox, { children: _jsx(CompanyLogo, { src: logo, alt: "CESCIFT Logo" }) }), _jsx(CompanyName, { children: "CeScift Technologies LLP" }), _jsx(TagLine, { children: "Empowering Industry with Smart Automation" })] }), _jsxs(FooterLinks, { children: [_jsxs(FooterColumn, { children: [_jsx(ColumnTitle, { children: "Company" }), _jsx(FooterLink, { to: "/about", children: "About Us" }), _jsx(FooterLink, { to: "/services", children: "Services" }), _jsx(FooterLink, { to: "/products", children: "Products" }), _jsx(FooterLink, { to: "/expertise", children: "Expertise" })] }), _jsxs(ContactColumn, { children: [_jsx(ColumnTitle, { children: "Contact Us" }), _jsxs(ContactInfo, { children: [_jsxs(ContactItem, { children: [_jsx(ContactIcon, { children: _jsx(FaMapMarkerAlt, {}) }), _jsxs("div", { children: [_jsx(ContactText, { children: "CeScift Technologies LLP" }), _jsx(ContactText, { children: "C/O Abraham T P, Thottappallil Puthenpurayil (H)," }), _jsx(ContactText, { children: "Lakkattoor P. O, Kottayam," }), _jsx(ContactText, { children: "Kerala, 686502" })] })] }), _jsxs(ContactLink, { href: "mailto:sales@cescift.in", children: [_jsx(ContactIcon, { children: _jsx(FaEnvelope, {}) }), _jsx(ContactText, { children: "sales@cescift.in" })] }), _jsxs(ContactLink, { href: "tel:+918848513468", children: [_jsx(ContactIcon, { children: _jsx(FaPhone, {}) }), _jsx(ContactText, { children: "+91 8848513468" })] })] })] })] })] }), _jsx(FooterDivider, {}), _jsxs(FooterBottom, { children: [_jsxs(Copyright, { children: ["\u00A9 ", new Date().getFullYear(), " CESCIFT Technologies LLP. All rights reserved."] }), _jsx(DesignedBy, { children: "Designed by CESCIFT Technologies" })] })] })] }));
 };
 export default Footer;
 // Styled Components
@@ -22,9 +22,16 @@ const FooterBackground = styled.div `
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    radial-gradient(circle at 10% 10%, rgba(30, 144, 255, 0.05) 0%, transparent 20%),
-    radial-gradient(circle at 90% 90%, rgba(100, 181, 246, 0.05) 0%, transparent 25%);
+  background-image: radial-gradient(
+      circle at 10% 10%,
+      rgba(30, 144, 255, 0.05) 0%,
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(100, 181, 246, 0.05) 0%,
+      transparent 25%
+    );
   z-index: 0;
 `;
 const FooterWrapper = styled.div `
@@ -38,7 +45,7 @@ const FooterTop = styled.div `
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 40px;
-  
+
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -50,14 +57,16 @@ const LogoSection = styled.div `
 `;
 const LogoBox = styled.div `
   height: 60px;
-  width: auto;
+  width: fit-content;
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+  background-color: white;
+  border-radius: 8px;
 `;
 const CompanyLogo = styled.img `
   height: 60px;
-  width: auto;
+  width: 60px;
 `;
 const CompanyName = styled.h3 `
   font-size: 1.25rem;
@@ -86,12 +95,12 @@ const SocialIcon = styled.a `
   background: rgba(255, 255, 255, 0.1);
   color: white;
   transition: all 0.3s ease;
-  
+
   &:hover {
     background: #1e90ff;
     transform: translateY(-3px);
   }
-  
+
   svg {
     font-size: 16px;
   }
@@ -101,7 +110,7 @@ const FooterLinks = styled.div `
   display: flex;
   flex-wrap: wrap;
   gap: 60px;
-  
+
   @media (max-width: 992px) {
     gap: 40px;
   }
@@ -115,9 +124,9 @@ const ColumnTitle = styled.h4 `
   font-weight: 600;
   margin-bottom: 20px;
   position: relative;
-  
+
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -8px;
     left: 0;
@@ -135,18 +144,18 @@ const FooterLink = styled(Link) `
   transition: all 0.3s ease;
   position: relative;
   padding-left: 15px;
-  
+
   &:before {
-    content: '›';
+    content: "›";
     position: absolute;
     left: 0;
     transition: transform 0.3s ease;
   }
-  
+
   &:hover {
     color: #1e90ff;
     transform: translateX(5px);
-    
+
     &:before {
       transform: translateX(3px);
     }
@@ -172,7 +181,7 @@ const ContactLink = styled.a `
   text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
   transition: color 0.3s ease;
-  
+
   &:hover {
     color: #1e90ff;
   }
@@ -201,7 +210,7 @@ const FooterBottom = styled.div `
   flex-wrap: wrap;
   gap: 20px;
   padding-top: 10px;
-  
+
   @media (max-width: 576px) {
     flex-direction: column;
     text-align: center;
