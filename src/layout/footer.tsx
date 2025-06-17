@@ -1,14 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaLinkedin, FaFacebook, FaTwitter, FaInstagram, FaMapMarkerAlt, FaEnvelope, FaPhone } from 'react-icons/fa';
-import styled from 'styled-components';
-import logo from '../Assests/icons/logo.png';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  FaLinkedin,
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaPhone,
+} from "react-icons/fa";
+import styled from "styled-components";
+import logo from "../Assests/icons/logo.png";
 
 const Footer = () => {
   return (
     <FooterContainer>
       <FooterBackground />
-      
+
       <FooterWrapper>
         <FooterTop>
           {/* Logo Section */}
@@ -18,9 +26,9 @@ const Footer = () => {
             </LogoBox>
             <CompanyName>CeScift Technologies LLP</CompanyName>
             <TagLine>Empowering Industry with Smart Automation</TagLine>
-            
+
             {/* Social Links */}
-            <SocialLinks>
+            {/* <SocialLinks>
               <SocialIcon href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
               </SocialIcon>
@@ -33,9 +41,9 @@ const Footer = () => {
               <SocialIcon href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                 <FaInstagram />
               </SocialIcon>
-            </SocialLinks>
+            </SocialLinks> */}
           </LogoSection>
-          
+
           {/* Navigation Links */}
           <FooterLinks>
             <FooterColumn>
@@ -45,38 +53,49 @@ const Footer = () => {
               <FooterLink to="/products">Products</FooterLink>
               <FooterLink to="/expertise">Expertise</FooterLink>
             </FooterColumn>
-            
+
             {/* Contact Information */}
             <ContactColumn>
               <ColumnTitle>Contact Us</ColumnTitle>
               <ContactInfo>
                 <ContactItem>
-                  <ContactIcon><FaMapMarkerAlt /></ContactIcon>
+                  <ContactIcon>
+                    <FaMapMarkerAlt />
+                  </ContactIcon>
                   <div>
                     <ContactText>CeScift Technologies LLP</ContactText>
-                    <ContactText>Thiruvalla, Kerala, India</ContactText>
+                    <ContactText>
+                      C/O Abraham T P, Thottappallil Puthenpurayil (H),
+                    </ContactText>
+                    <ContactText>Lakkattoor P. O, Kottayam,</ContactText>
+                    <ContactText>Kerala, 686502</ContactText>
                   </div>
                 </ContactItem>
-                <ContactLink href="mailto:info@cescift.com">
-                  <ContactIcon><FaEnvelope /></ContactIcon>
-                  <ContactText>info@cescift.com</ContactText>
+                <ContactLink href="mailto:sales@cescift.in">
+                  <ContactIcon>
+                    <FaEnvelope />
+                  </ContactIcon>
+                  <ContactText>sales@cescift.in</ContactText>
                 </ContactLink>
                 <ContactLink href="tel:+918848513468">
-                  <ContactIcon><FaPhone /></ContactIcon>
+                  <ContactIcon>
+                    <FaPhone />
+                  </ContactIcon>
                   <ContactText>+91 8848513468</ContactText>
                 </ContactLink>
               </ContactInfo>
             </ContactColumn>
           </FooterLinks>
         </FooterTop>
-        
+
         <FooterDivider />
-        
+
         <FooterBottom>
-          <Copyright>&copy; {new Date().getFullYear()} CESCIFT Technologies LLP. All rights reserved.</Copyright>
-          <DesignedBy>
-            Designed by CESCIFT Technologies
-          </DesignedBy>
+          <Copyright>
+            &copy; {new Date().getFullYear()} CESCIFT Technologies LLP. All
+            rights reserved.
+          </Copyright>
+          <DesignedBy>Designed by CESCIFT Technologies</DesignedBy>
         </FooterBottom>
       </FooterWrapper>
     </FooterContainer>
@@ -101,9 +120,16 @@ const FooterBackground = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    radial-gradient(circle at 10% 10%, rgba(30, 144, 255, 0.05) 0%, transparent 20%),
-    radial-gradient(circle at 90% 90%, rgba(100, 181, 246, 0.05) 0%, transparent 25%);
+  background-image: radial-gradient(
+      circle at 10% 10%,
+      rgba(30, 144, 255, 0.05) 0%,
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(100, 181, 246, 0.05) 0%,
+      transparent 25%
+    );
   z-index: 0;
 `;
 
@@ -119,7 +145,7 @@ const FooterTop = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 40px;
-  
+
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -133,15 +159,17 @@ const LogoSection = styled.div`
 
 const LogoBox = styled.div`
   height: 60px;
-  width: auto;
+  width: fit-content;
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+  background-color: white;
+  border-radius: 8px;
 `;
 
 const CompanyLogo = styled.img`
   height: 60px;
-  width: auto;
+  width: 60px;
 `;
 
 const CompanyName = styled.h3`
@@ -174,12 +202,12 @@ const SocialIcon = styled.a`
   background: rgba(255, 255, 255, 0.1);
   color: white;
   transition: all 0.3s ease;
-  
+
   &:hover {
     background: #1e90ff;
     transform: translateY(-3px);
   }
-  
+
   svg {
     font-size: 16px;
   }
@@ -190,7 +218,7 @@ const FooterLinks = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 60px;
-  
+
   @media (max-width: 992px) {
     gap: 40px;
   }
@@ -206,9 +234,9 @@ const ColumnTitle = styled.h4`
   font-weight: 600;
   margin-bottom: 20px;
   position: relative;
-  
+
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -8px;
     left: 0;
@@ -227,18 +255,18 @@ const FooterLink = styled(Link)`
   transition: all 0.3s ease;
   position: relative;
   padding-left: 15px;
-  
+
   &:before {
-    content: '›';
+    content: "›";
     position: absolute;
     left: 0;
     transition: transform 0.3s ease;
   }
-  
+
   &:hover {
     color: #1e90ff;
     transform: translateX(5px);
-    
+
     &:before {
       transform: translateX(3px);
     }
@@ -268,7 +296,7 @@ const ContactLink = styled.a`
   text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
   transition: color 0.3s ease;
-  
+
   &:hover {
     color: #1e90ff;
   }
@@ -301,7 +329,7 @@ const FooterBottom = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   padding-top: 10px;
-  
+
   @media (max-width: 576px) {
     flex-direction: column;
     text-align: center;

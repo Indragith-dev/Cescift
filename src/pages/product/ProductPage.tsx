@@ -11,6 +11,7 @@ import drivesImage from "../../Assests/images/productImages/drivesImage.jpg";
 import encoderImage from "../../Assests/images/productImages/encoderImage.jpg";
 import HMIImage from "../../Assests/images/productImages/HMIImage.jpg";
 import IOTImage from "../../Assests/images/productImages/IOTImage.jpg";
+import ScadaImage from "../../Assests/images/productImages/scadaSystemsImage.jpg";
 import microMotorImages from "../../Assests/images/productImages/microMotorImages.jpg";
 import motionImage from "../../Assests/images/productImages/motionImage.jpg";
 import plcImage from "../../Assests/images/productImages/plcImage.jpg";
@@ -52,7 +53,7 @@ const ProductsPage = () => {
           </ProductCard>
 
           <ProductCard>
-            <ProductIcon src={IOTImage} alt="SCADA Systems" />
+            <ProductIcon src={ScadaImage} alt="SCADA Systems" />
             <ProductTitle>SCADA Systems</ProductTitle>
             <ProductDescription>
               Supervisory Control and Data Acquisition systems for real-time
